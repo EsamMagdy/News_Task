@@ -27,6 +27,7 @@ import { EditorModule } from 'primeng/editor';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { SpeedDialModule } from 'primeng/speeddial';
 import { FileUploadModule } from 'primeng/fileupload';
+import { CKEditorModule } from 'ckeditor4-angular';
 
 @NgModule({
   declarations: [FooterComponent, NavbarComponent],
@@ -61,6 +62,7 @@ import { FileUploadModule } from 'primeng/fileupload';
     InputSwitchModule,
     SpeedDialModule,
     FileUploadModule,
+    CKEditorModule
   ],
   exports: [
     FooterComponent,
@@ -85,6 +87,7 @@ import { FileUploadModule } from 'primeng/fileupload';
     InputSwitchModule,
     SpeedDialModule,
     FileUploadModule,
+    CKEditorModule
   ],
 })
 export class CoreModule {}

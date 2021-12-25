@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hYMvTqPmR0XVc4T9GPpwE7+8jwKeYtgoZlVoF/VTbg3pW/ksouCiLx6eQDHaIScO064qqt5iDQjz5RXUB37CtA==",
+  "dgSpecHash": "9EFIuDnNGfb84dWnnWVmFy9ykCf8xVT7XC2QGB4Z5QlBc/tVkfKA2U9jKW+kztb/6cN+PZH535XE16nryeQb8g==",
   "success": true,
-  "projectFilePath": "F:\\NewsTask\\Api\\OA_WebApi\\OA_WebApi.csproj",
+  "projectFilePath": "F:\\NewsTask\\api\\oa_webapi\\OA_WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\laptop\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\laptop\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

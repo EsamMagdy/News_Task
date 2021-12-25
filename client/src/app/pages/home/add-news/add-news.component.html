@@ -1,19 +1,20 @@
-<div class="card shadow mb-3">
-    <div class="card-header">
-      <div class="text-primary font-weight-bold">Add Page</div>
+<div class="mt-4">
+  <div class="card shadow mb-3">
+    <div class="card-header fa-2x font-w-700 text-center">
+      <div class="text-primary font-weight-bold">اضافة خبر</div>
     </div>
     <div class="card-body">
       <form [formGroup]="form" (ngSubmit)="onAdd()" #addForm="ngForm">
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <label for="">Title</label>
+              <label for="">العنوان بالعربى</label>
               <input
                 type="text"
                 class="form-control"
                 name="title"
                 id="title"
-                placeholder="title..."
+                placeholder="العنوان بالعربى..."
                 formControlName="title"
               />
   
@@ -23,7 +24,7 @@
                 role="alert"
               >
                 <i class="fas fa-times-circle me-2"></i>
-                Title is Required
+                العنوان مطلوب
               </div>
   
               <div
@@ -32,7 +33,7 @@
                 role="alert"
               >
                 <i class="fas fa-times-circle me-2"></i>
-                Title minimum length is 3
+                العنوان يجب ان يكون عالاقل 3 حروف
               </div>
   
               <div
@@ -41,46 +42,54 @@
                 role="alert"
               >
                 <i class="fas fa-times-circle me-2"></i>
-                Title maximum length is 50
+                يجب الا يزيد العنوان عن 50 حرف
               </div>
             </div>
           </div>
-  
           <div class="col-md-6">
             <div class="form-group">
-              <label for="order">Order</label>
+              <label for="">العنوان بالانجليزى</label>
               <input
-                type="number"
+                type="text"
                 class="form-control"
-                name="order"
-                id="order"
-                placeholder="order..."
-                formControlName="order"
+                name="title"
+                id="title"
+                placeholder="العنوان بالانجليزى..."
+                formControlName="title"
               />
   
               <div
-                *ngIf="Order.hasError('required') && addForm.submitted"
+                *ngIf="Title.hasError('required') && addForm.submitted"
                 class="error-msg p-1 small"
                 role="alert"
               >
                 <i class="fas fa-times-circle me-2"></i>
-                Order is Required
+                العنوان مطلوب
               </div>
   
               <div
-                *ngIf="Order.errors?.min && addForm.submitted"
+                *ngIf="Title.errors?.minlength && addForm.submitted"
                 class="error-msg p-1 small"
                 role="alert"
               >
                 <i class="fas fa-times-circle me-2"></i>
-                Order min value is 0
+                العنوان يجب ان يكون عالاقل 3 حروف
+              </div>
+  
+              <div
+                *ngIf="Title.errors?.maxlength && addForm.submitted"
+                class="error-msg p-1 small"
+                role="alert"
+              >
+                <i class="fas fa-times-circle me-2"></i>
+                يجب الا يزيد العنوان عن 50 حرف
               </div>
             </div>
           </div>
   
           <div class="col-12 my-3">
             <div class="d-flex gap">
-              <label class="fs-large">Is Visible</label>
+              <label class="fs-large">عرضه</label>
               <p-inputSwitch formControlName="isVisible"></p-inputSwitch>
             </div>
   
@@ -90,13 +99,13 @@
               role="alert"
             >
               <i class="fas fa-times-circle me-2"></i>
-              is Required
+              مطلوب
             </div>
           </div>
   
           <div class="col-12">
             <div class="form-group">
-              <label for="minDesc">Min Description</label>
+              <label for="minDesc">التفاصيل بالعربى</label>
               <textarea
                 class="form-control"
                 name="minDesc"
@@ -111,7 +120,7 @@
                 role="alert"
               >
                 <i class="fas fa-times-circle me-2"></i>
-                Mini Description is Required
+                التفاصيل مطلوبة
               </div>
   
               <div
@@ -120,7 +129,7 @@
                 role="alert"
               >
                 <i class="fas fa-times-circle me-2"></i>
-                Mini Description minimum length is 20
+                يجب ان يكون التفاصيل على الاقل 20 حرف
               </div>
   
               <div
@@ -129,7 +138,46 @@
                 role="alert"
               >
                 <i class="fas fa-times-circle me-2"></i>
-                Mini Description maximum length is 250
+                يجب الا تتعدى التفاصيل 250 حرف
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group">
+              <label for="minDesc">التفاصيل بالانجليزى</label>
+              <textarea
+                class="form-control"
+                name="minDesc"
+                id="minDesc"
+                rows="3"
+                formControlName="minDescription"
+              ></textarea>
+  
+              <div
+                *ngIf="MinDescription.hasError('required') && addForm.submitted"
+                class="error-msg p-1 small"
+                role="alert"
+              >
+                <i class="fas fa-times-circle me-2"></i>
+                التفاصيل مطلوبة
+              </div>
+  
+              <div
+                *ngIf="MinDescription.errors?.minlength && addForm.submitted"
+                class="error-msg p-1 small"
+                role="alert"
+              >
+                <i class="fas fa-times-circle me-2"></i>
+                يجب ان يكون التفاصيل على الاقل 20 حرف
+              </div>
+  
+              <div
+                *ngIf="MinDescription.errors?.maxlength && addForm.submitted"
+                class="error-msg p-1 small"
+                role="alert"
+              >
+                <i class="fas fa-times-circle me-2"></i>
+                يجب الا تتعدى التفاصيل 250 حرف
               </div>
             </div>
           </div>
@@ -137,7 +185,7 @@
           <div class="col-12">
             <!-- -------------------------------- Image -------------------------------- -->
             <div class="form-group">
-              <label for="Image">Image</label>
+              <label for="Image">الصورة</label>
               <p-fileUpload
                 id="Image"
                 url="./upload.php"
@@ -147,6 +195,7 @@
                 accept="image/*"
                 [showUploadButton]="false"
                 [showCancelButton]="false"
+                chooseLabel="اختر"
               >
               </p-fileUpload>
   
@@ -156,33 +205,18 @@
                 role="alert"
               >
                 <i class="fas fa-times-circle me-2"></i>
-                Image is Required
+                الصورة مطلوبة
               </div>
             </div>
           </div>
   
-          <div class="col-12">
-            <ckeditor
-              formControlName="maxDescription"
-              data="<p>Description</p>"
-            ></ckeditor>
-            <div
-              *ngIf="MaxDescription.hasError('required') && addForm.submitted"
-              class="error-msg p-1 small"
-              role="alert"
-            >
-              <i class="fas fa-times-circle me-2"></i>
-              Max Description is Required
-            </div>
-          </div>
-  
           <div class="col-12 d-flex justify-content-center mt-4">
-            <button type="submit" class="btn btn-success rounded-pill w-200px">
-              Add
+            <button type="submit" class="btn btn-primary rounded-pill w-200px">
+              اضافة
             </button>
           </div>
         </div>
       </form>
     </div>
   </div>
-  
+</div>

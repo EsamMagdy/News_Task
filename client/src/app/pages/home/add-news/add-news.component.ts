@@ -11,7 +11,7 @@ import { NewsService } from '../news.service';
 @Component({
   selector: 'app-add-static-page',
   templateUrl: './add-news.component.html',
-  styleUrls: ['./add-news.component.css'],
+  styleUrls: ['./add-news.component.scss'],
 })
 export class AddNewsComponent implements OnInit {
   form!: FormGroup;

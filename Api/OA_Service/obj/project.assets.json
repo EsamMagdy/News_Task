@@ -5750,11 +5750,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\NewsTask\\Api\\OA_Service\\OA_Service.csproj",
+      "projectUniqueName": "F:\\NewsTask\\api\\OA_Service\\OA_Service.csproj",
       "projectName": "OA_Service",
-      "projectPath": "F:\\NewsTask\\Api\\OA_Service\\OA_Service.csproj",
+      "projectPath": "F:\\NewsTask\\api\\OA_Service\\OA_Service.csproj",
       "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-      "outputPath": "F:\\NewsTask\\Api\\OA_Service\\obj\\",
+      "outputPath": "F:\\NewsTask\\api\\OA_Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5771,11 +5771,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "F:\\NewsTask\\Api\\OA_Data\\OA_Data.csproj": {
-              "projectPath": "F:\\NewsTask\\Api\\OA_Data\\OA_Data.csproj"
+            "F:\\NewsTask\\api\\OA_Data\\OA_Data.csproj": {
+              "projectPath": "F:\\NewsTask\\api\\OA_Data\\OA_Data.csproj"
             },
-            "F:\\NewsTask\\Api\\OA_Repo\\OA_Repo.csproj": {
-              "projectPath": "F:\\NewsTask\\Api\\OA_Repo\\OA_Repo.csproj"
+            "F:\\NewsTask\\api\\OA_Repo\\OA_Repo.csproj": {
+              "projectPath": "F:\\NewsTask\\api\\OA_Repo\\OA_Repo.csproj"
             }
           }
         }
