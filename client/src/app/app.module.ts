@@ -13,6 +13,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { UnderConstructionComponent } from './pages/under-construction/under-construction.component';
 import { AuthInterceptorService } from './modules/core/interceptors/auth.interceptor';
 import { AddNewsComponent } from './pages/home/add-news/add-news.component';
+import { EditNewsComponent } from './pages/home/edit-news/edit-news.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AddNewsComponent } from './pages/home/add-news/add-news.component';
     NewsComponent,
     NotFoundComponent,
     UnderConstructionComponent,
-    AddNewsComponent
+    AddNewsComponent,
+    EditNewsComponent
   ],
   imports: [
     BrowserModule,

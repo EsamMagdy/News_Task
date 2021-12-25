@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\NewsTask\\Api\\OA_WebApi\\OA_WebApi.csproj": {}
+    "F:\\NewsTask\\api\\oa_webapi\\OA_WebApi.csproj": {}
   },
   "projects": {
-    "F:\\NewsTask\\Api\\OA_Data\\OA_Data.csproj": {
+    "F:\\NewsTask\\api\\OA_Data\\OA_Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\NewsTask\\Api\\OA_Data\\OA_Data.csproj",
+        "projectUniqueName": "F:\\NewsTask\\api\\OA_Data\\OA_Data.csproj",
         "projectName": "OA_Data",
-        "projectPath": "F:\\NewsTask\\Api\\OA_Data\\OA_Data.csproj",
+        "projectPath": "F:\\NewsTask\\api\\OA_Data\\OA_Data.csproj",
         "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-        "outputPath": "F:\\NewsTask\\Api\\OA_Data\\obj\\",
+        "outputPath": "F:\\NewsTask\\api\\OA_Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -74,14 +74,14 @@
         }
       }
     },
-    "F:\\NewsTask\\Api\\OA_Repo\\OA_Repo.csproj": {
+    "F:\\NewsTask\\api\\OA_Repo\\OA_Repo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\NewsTask\\Api\\OA_Repo\\OA_Repo.csproj",
+        "projectUniqueName": "F:\\NewsTask\\api\\OA_Repo\\OA_Repo.csproj",
         "projectName": "OA_Repo",
-        "projectPath": "F:\\NewsTask\\Api\\OA_Repo\\OA_Repo.csproj",
+        "projectPath": "F:\\NewsTask\\api\\OA_Repo\\OA_Repo.csproj",
         "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-        "outputPath": "F:\\NewsTask\\Api\\OA_Repo\\obj\\",
+        "outputPath": "F:\\NewsTask\\api\\OA_Repo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -98,8 +98,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "F:\\NewsTask\\Api\\OA_Data\\OA_Data.csproj": {
-                "projectPath": "F:\\NewsTask\\Api\\OA_Data\\OA_Data.csproj"
+              "F:\\NewsTask\\api\\OA_Data\\OA_Data.csproj": {
+                "projectPath": "F:\\NewsTask\\api\\OA_Data\\OA_Data.csproj"
               }
             }
           }
@@ -156,14 +156,14 @@
         }
       }
     },
-    "F:\\NewsTask\\Api\\OA_Service\\OA_Service.csproj": {
+    "F:\\NewsTask\\api\\OA_Service\\OA_Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\NewsTask\\Api\\OA_Service\\OA_Service.csproj",
+        "projectUniqueName": "F:\\NewsTask\\api\\OA_Service\\OA_Service.csproj",
         "projectName": "OA_Service",
-        "projectPath": "F:\\NewsTask\\Api\\OA_Service\\OA_Service.csproj",
+        "projectPath": "F:\\NewsTask\\api\\OA_Service\\OA_Service.csproj",
         "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-        "outputPath": "F:\\NewsTask\\Api\\OA_Service\\obj\\",
+        "outputPath": "F:\\NewsTask\\api\\OA_Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -180,11 +180,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "F:\\NewsTask\\Api\\OA_Data\\OA_Data.csproj": {
-                "projectPath": "F:\\NewsTask\\Api\\OA_Data\\OA_Data.csproj"
+              "F:\\NewsTask\\api\\OA_Data\\OA_Data.csproj": {
+                "projectPath": "F:\\NewsTask\\api\\OA_Data\\OA_Data.csproj"
               },
-              "F:\\NewsTask\\Api\\OA_Repo\\OA_Repo.csproj": {
-                "projectPath": "F:\\NewsTask\\Api\\OA_Repo\\OA_Repo.csproj"
+              "F:\\NewsTask\\api\\OA_Repo\\OA_Repo.csproj": {
+                "projectPath": "F:\\NewsTask\\api\\OA_Repo\\OA_Repo.csproj"
               }
             }
           }
@@ -243,14 +243,14 @@
         }
       }
     },
-    "F:\\NewsTask\\Api\\OA_WebApi\\OA_WebApi.csproj": {
+    "F:\\NewsTask\\api\\oa_webapi\\OA_WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\NewsTask\\Api\\OA_WebApi\\OA_WebApi.csproj",
+        "projectUniqueName": "F:\\NewsTask\\api\\oa_webapi\\OA_WebApi.csproj",
         "projectName": "OA_WebApi",
-        "projectPath": "F:\\NewsTask\\Api\\OA_WebApi\\OA_WebApi.csproj",
+        "projectPath": "F:\\NewsTask\\api\\oa_webapi\\OA_WebApi.csproj",
         "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-        "outputPath": "F:\\NewsTask\\Api\\OA_WebApi\\obj\\",
+        "outputPath": "F:\\NewsTask\\api\\oa_webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -267,8 +267,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "F:\\NewsTask\\Api\\OA_Service\\OA_Service.csproj": {
-                "projectPath": "F:\\NewsTask\\Api\\OA_Service\\OA_Service.csproj"
+              "F:\\NewsTask\\api\\OA_Service\\OA_Service.csproj": {
+                "projectPath": "F:\\NewsTask\\api\\OA_Service\\OA_Service.csproj"
               }
             }
           }

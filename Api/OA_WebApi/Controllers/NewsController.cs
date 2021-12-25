@@ -33,11 +33,11 @@ namespace OA_WebApi.Controllers
         [HttpGet("GetNewById")]
         public ActionResult GetNewById(int id)
         {
-            var newInDb = _newService.GetNewById(id);
+            var newsDto = _newService.GetNewById(id);
 
-            if (newInDb == null) return NotFound();
+            if (newsDto == null) return NotFound();
 
-            return Ok(_mapper.Map<New, NewDto>(newInDb));
+            return Ok(new ResponseModel<NewDto> { Data = newsDto });
         }
         [HttpPost("AddNew")]
         public void AddNew(NewDto newDto)

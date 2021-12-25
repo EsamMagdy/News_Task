@@ -19,8 +19,8 @@ namespace OA_Service.Implementation
         private readonly IMapper _mapper;
         private readonly IImageConversion _imageConversion;
         private readonly IWebHostEnvironment _hostingEnvironment;
-        public NewService(IUnitOfWork unitOfWork, 
-            IMapper mapper, 
+        public NewService(IUnitOfWork unitOfWork,
+            IMapper mapper,
             IImageConversion imageConversion,
             IWebHostEnvironment hostingEnvironment)
         {
@@ -95,9 +95,11 @@ namespace OA_Service.Implementation
             });
             return new ResponseModel<PagingSortingFiltering<New>> { Data = result };
         }
-        public New GetNewById(int Id)
+        public NewDto GetNewById(int Id)
         {
-            return _unitOfWork.News.Get(Id);
+            var newsInDb = _unitOfWork.News.Get(Id);
+
+            return _mapper.Map<New, NewDto>(newsInDb);
         }
         public void AddNew(NewDto newDto)
         {
@@ -106,7 +108,6 @@ namespace OA_Service.Implementation
 
             var news = _mapper.Map<NewDto, New>(newDto);
             _unitOfWork.News.Insert(news);
-            _unitOfWork.Complete();
 
 
         }
@@ -124,13 +125,14 @@ namespace OA_Service.Implementation
         public void DeleteNew(int id)
         {
 
-            var newInDb = GetNewById(id);
+            var newsDto = GetNewById(id);
 
-            if (newInDb == null) throw new ArgumentNullException("entity");
+            if (newsDto == null) throw new ArgumentNullException("entity");
 
-            _unitOfWork.News.Remove(newInDb);
+            var newsInDb = _mapper.Map<NewDto, New>(newsDto);
 
-            _unitOfWork.Complete();
+            newsInDb.IsDeleted = true;
+
         }
     }
 }

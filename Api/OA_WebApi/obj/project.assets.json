@@ -6050,11 +6050,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\NewsTask\\Api\\OA_WebApi\\OA_WebApi.csproj",
+      "projectUniqueName": "F:\\NewsTask\\api\\oa_webapi\\OA_WebApi.csproj",
       "projectName": "OA_WebApi",
-      "projectPath": "F:\\NewsTask\\Api\\OA_WebApi\\OA_WebApi.csproj",
+      "projectPath": "F:\\NewsTask\\api\\oa_webapi\\OA_WebApi.csproj",
       "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-      "outputPath": "F:\\NewsTask\\Api\\OA_WebApi\\obj\\",
+      "outputPath": "F:\\NewsTask\\api\\oa_webapi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6071,8 +6071,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "F:\\NewsTask\\Api\\OA_Service\\OA_Service.csproj": {
-              "projectPath": "F:\\NewsTask\\Api\\OA_Service\\OA_Service.csproj"
+            "F:\\NewsTask\\api\\OA_Service\\OA_Service.csproj": {
+              "projectPath": "F:\\NewsTask\\api\\OA_Service\\OA_Service.csproj"
             }
           }
         }

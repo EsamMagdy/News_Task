@@ -22,6 +22,11 @@ export class NewsService {
         `News/GetAllNews?PageNumber=${pageNumber}&PageSize=${pageSize}&Order=${order}&SortBy='${sortBy}'&SearchBy=${searchBy}`
     );
   }
+  getNewsById(id: number) {
+    return this.http.get<ResponseModel<News>>(
+      environment.apiUrl + `News/GetNewById?id=${id}`
+    );
+  }
 
   updateUser(user: User) {
     return this.http.post(
@@ -34,9 +39,7 @@ export class NewsService {
     return this.http.post<User>(environment.apiUrl + `users/CreateUser`, user);
   }
   addNews(news: News) {
-    return this.http
-      .post<News>(environment.apiUrl + `news/AddNew`, news);
-     
+    return this.http.post<News>(environment.apiUrl + `news/AddNew`, news);
   }
   getImageInBase64(file: any): Promise<any> {
     return new Promise((resolve, reject) => {

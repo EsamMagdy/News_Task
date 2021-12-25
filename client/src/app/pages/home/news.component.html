@@ -58,45 +58,65 @@
   </ng-template>
   <ng-template pTemplate="header">
     <tr>
-      <th style="width: 3rem">
+      <!-- <th style="width: 3rem">
         <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-      </th>
-      <th pSortableColumn="nameAr">
+      </th> -->
+      <th pSortableColumn="nameAr" class="col-2">
         الاسم بالعربى <p-sortIcon field="nameAr"></p-sortIcon>
       </th>
-      <th pSortableColumn="nameEn">
+      <th pSortableColumn="nameEn" class="col-2">
         الاسم بالانجليزى <p-sortIcon field="nameEn"></p-sortIcon>
       </th>
-      <th pSortableColumn="detailsAr">
+      <th pSortableColumn="detailsAr" class="col-2">
         التفاصيل بالعربى <p-sortIcon field="detailsAr"></p-sortIcon>
       </th>
-      <th pSortableColumn="detailsEn">
+      <th pSortableColumn="detailsEn" class="col-2">
         التفاصيل بالانجليزى <p-sortIcon field="detailsEn"></p-sortIcon>
       </th>
-      <th pSortableColumn="image">
+      <th pSortableColumn="image" class="col-2">
         الصورة <p-sortIcon field="image"></p-sortIcon>
+      </th>
+      <th pSortableColumn="isVisible" class="col-1">
+        مرئى <p-sortIcon field="isVisible"></p-sortIcon>
       </th>
       <th></th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-newData>
     <tr>
-      <td>
+      <!-- <td>
         <p-tableCheckbox [value]="newData"></p-tableCheckbox>
-      </td>
+      </td> -->
       <td>{{ newData.nameAr }}</td>
       <td>{{ newData.nameEn }}</td>
       <td>{{ newData.detailsAr }}</td>
       <td>{{ newData.detailsEn }}</td>
-      <td> <img [src]="newData.image|safeUrl" class="img-fluid img-thumbnail rounded-3" /></td>
-    
+      <td>
+        <img
+          [src]="newData.image | safeUrl"
+          class="img-fluid img-thumbnail rounded-3"
+        />
+      </td>
+      <td>
+        <div >
+          <i
+            class="fa"
+            aria-hidden="true"
+            [ngClass]="{
+              'fa-eye text-primary': newData.isVisible,
+              'fa-eye-slash text-danger': !newData.isVisible
+            }"
+          ></i>
+        </div>
+      </td>
+
       <td>
         <button
           pButton
           pRipple
           icon="pi pi-pencil"
           class="p-button-rounded p-button-success p-mr-2"
-          (click)="editUser(user)"
+          [routerLink]="['/news/edit-news/', newData.id]"
         ></button>
         <button
           pButton

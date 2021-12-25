@@ -11,7 +11,7 @@ namespace OA_Service.Interface
     public interface INewService
     {
         Task<ResponseModel<PagingSortingFiltering<New>>> GetAllNews(PagingParams pagingParams, SortingParams sortingParams, string searchBy);
-        New GetNewById(int Id);
+        NewDto GetNewById(int Id);
         void AddNew(NewDto newDto);
         void UpdateNew(int id, NewDto newDto);
         void DeleteNew(int id);

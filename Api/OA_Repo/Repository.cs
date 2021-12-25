@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace OA_Repo
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : BaseEntity
     {
         private readonly ApplicationContext context;
         private DbSet<T> entities;
@@ -19,49 +19,50 @@ namespace OA_Repo
             this.context = context;
             entities = context.Set<T>();
         }
-        public IEnumerable<T> GetAll()  
-        {  
-            return entities.AsEnumerable();  
-        }  
-  
-        public T Get(int id)  
-        {  
-            return entities.Find(id);
-        }  
-        public void Insert(T entity)  
-        {  
-            if (entity == null)  
-            {  
-                throw new ArgumentNullException("entity");  
-            }  
-            entities.Add(entity);  
-        }  
-  
-        public void Update(T entity)  
-        {  
-            if (entity == null)  
-            {  
-                throw new ArgumentNullException("entity");  
+        public IEnumerable<T> GetAll()
+        {
+            return entities.Where(s => s.IsDeleted == false)
+                        .AsEnumerable();
+        }
+
+        public T Get(int id)
+        {
+            return entities.SingleOrDefault(s => s.Id == id && s.IsDeleted == false);
+        }
+        public void Insert(T entity)
+        {
+            if (entity == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+            entities.Add(entity);
+        }
+
+        public void Update(T entity)
+        {
+            if (entity == null)
+            {
+                throw new ArgumentNullException("entity");
             }
             entities.Attach(entity);
             context.Entry(entity).State = EntityState.Modified;
-        }  
-  
-        public void Delete(T entity)  
-        {  
-            if (entity == null)  
-            {  
-                throw new ArgumentNullException("entity");  
-            }  
-            entities.Remove(entity);  
-        }  
-        public void Remove(T entity)  
-        {  
-            if (entity == null)  
-            {  
-                throw new ArgumentNullException("entity");  
-            }  
-        }  
-  
+        }
+
+        public void Delete(T entity)
+        {
+            if (entity == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+            entities.Remove(entity);
+        }
+        public void Remove(T entity)
+        {
+            if (entity == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+        }
+
     }
 }

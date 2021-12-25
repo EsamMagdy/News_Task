@@ -1,3 +1,4 @@
+import { EditNewsComponent } from './pages/home/edit-news/edit-news.component';
 import { AddNewsComponent } from './pages/home/add-news/add-news.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'news', pathMatch: 'full' },
   { path: 'news', component: NewsComponent },
   { path: 'news/add-news', component: AddNewsComponent },
+  { path: 'news/edit-news/:id', component: EditNewsComponent },
   { path: 'under-construction', component: UnderConstructionComponent },
 
   {
