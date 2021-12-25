@@ -415,7 +415,7 @@ body {
 }
 
 .bg-006472 {
-  background-color: #006472;
+  background-color: #6c63ff;
 }
 
 .bg-1aa7ba {
@@ -731,7 +731,7 @@ html:lang(ar) .float-start {
 .custom-header::before {
   content: "";
   position: absolute;
-  background: url(../src/assets/images/icons/line.png);
+  background: #6c63ff;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -748,7 +748,9 @@ html:lang(ar) .float-start {
 }
 
 .primary-btn:hover {
-  color: white;
+  color: #fff;
+  background-color: #483dff;
+  border-color: #3c30ff;
 }
 
 .h-fit {
@@ -807,7 +809,7 @@ header {
 }
 
 #banner {
-  background: url("assets/images/bg-01.jpg");
+  background: url("assets/images/undraw_remotely_2j6y.svg");
   background-size: cover;
   background-position: center;
 }
@@ -906,7 +908,7 @@ button:disabled .prev-icon {
 
 .primary-btn {
   border: 1.5px solid #fff;
-  background: radial-gradient(#8ec8c0, #1298ad);
+  background:#6c63ff;
   color: #fff;
   padding: 1.3ex 4ex;
   border-radius: 50rem;
