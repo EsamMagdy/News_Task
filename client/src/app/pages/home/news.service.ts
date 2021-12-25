@@ -33,20 +33,10 @@ export class NewsService {
   createUser(user: User) {
     return this.http.post<User>(environment.apiUrl + `users/CreateUser`, user);
   }
-  addNews(page: News) {
+  addNews(news: News) {
     return this.http
-      .post<News>(environment.apiUrl + `StaticPage/CreateStaticPage`, page)
-      .subscribe(
-        (resData) => {
-          if (resData) {
-            // this.Pages.push(resData);
-            // this.updates.next([...this.Pages]);
-
-            this.router.navigate(['/news']);
-          }
-        },
-        (error: HttpErrorResponse) => {}
-      );
+      .post<News>(environment.apiUrl + `news/AddNew`, news);
+     
   }
   getImageInBase64(file: any): Promise<any> {
     return new Promise((resolve, reject) => {

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Hosting;
 using Newtonsoft.Json;
 using OA_Data;
 using OA_Repo;
@@ -16,9 +17,17 @@ namespace OA_Service.Implementation
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
-        public NewService(IUnitOfWork unitOfWork, IMapper mapper)
+        private readonly IImageConversion _imageConversion;
+        private readonly IWebHostEnvironment _hostingEnvironment;
+        public NewService(IUnitOfWork unitOfWork, 
+            IMapper mapper, 
+            IImageConversion imageConversion,
+            IWebHostEnvironment hostingEnvironment)
         {
             _unitOfWork = unitOfWork;
+            _imageConversion = imageConversion;
+            _mapper = mapper;
+            _hostingEnvironment = hostingEnvironment;
         }
         public async Task<ResponseModel<PagingSortingFiltering<New>>> GetAllNews(PagingParams pagingParams, SortingParams sortingParams, string searchBy)
         {
@@ -77,16 +86,26 @@ namespace OA_Service.Implementation
             var result = await PagingSortingFilteringList<New>
                             .CreateAsync(news, pagingParams);
 
+            string contentRootPath = _hostingEnvironment.ContentRootPath + @"\Images";
+            result.Items.ForEach(s =>
+            {
+                s.Image = s.Image != null
+                            ? _imageConversion.GetImagePath(contentRootPath, s.Image)
+                            : null;
+            });
             return new ResponseModel<PagingSortingFiltering<New>> { Data = result };
         }
         public New GetNewById(int Id)
         {
             return _unitOfWork.News.Get(Id);
         }
-        public void AddNew(New newData)
+        public void AddNew(NewDto newDto)
         {
+            newDto.Image = _imageConversion
+                                .SaveImageToPath(newDto.Image, newDto.ImageName);
 
-            _unitOfWork.News.Insert(newData);
+            var news = _mapper.Map<NewDto, New>(newDto);
+            _unitOfWork.News.Insert(news);
             _unitOfWork.Complete();
 
 

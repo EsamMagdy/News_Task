@@ -42,9 +42,8 @@ namespace OA_WebApi.Controllers
         [HttpPost("AddNew")]
         public void AddNew(NewDto newDto)
         {
-            var newData = _mapper.Map<NewDto, New>(newDto);
 
-            _newService.AddNew(newData);
+            _newService.AddNew(newDto);
 
         }
 

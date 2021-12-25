@@ -22,7 +22,7 @@ export class AddNewsComponent implements OnInit {
     private newsService: NewsService
   ) {
     this.form = this.fb.group({
-      title: [
+      nameAr: [
         null,
         [
           Validators.required,
@@ -30,9 +30,16 @@ export class AddNewsComponent implements OnInit {
           Validators.maxLength(50),
         ],
       ],
-      order: [null, [Validators.required, Validators.min(0)]],
+      nameEn: [
+        null,
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(50),
+        ],
+      ],
       isVisible: [false, Validators.required],
-      minDescription: [
+      detailsAr: [
         null,
         [
           Validators.required,
@@ -40,31 +47,35 @@ export class AddNewsComponent implements OnInit {
           Validators.maxLength(250),
         ],
       ],
-      maxDescription: [null, [Validators.required]],
+      detailsEn: [
+        null,
+        [
+          Validators.required,
+          Validators.minLength(20),
+          Validators.maxLength(250),
+        ],
+      ],
       image: [null, [Validators.required]],
     });
   }
 
   ngOnInit() {}
 
-  public get Title(): FormControl {
-    return this.form.get('title') as FormControl;
+  public get NameAr(): FormControl {
+    return this.form.get('nameAr') as FormControl;
   }
-
-  public get Order(): FormControl {
-    return this.form.get('order') as FormControl;
+  public get NameEn(): FormControl {
+    return this.form.get('nameEn') as FormControl;
+  }
+  public get DetailsAr(): FormControl {
+    return this.form.get('detailsAr') as FormControl;
+  }
+  public get DetailsEn(): FormControl {
+    return this.form.get('detailsEn') as FormControl;
   }
 
   public get IsVisible(): FormControl {
     return this.form.get('isVisible') as FormControl;
-  }
-
-  public get MinDescription(): FormControl {
-    return this.form.get('minDescription') as FormControl;
-  }
-
-  public get MaxDescription(): FormControl {
-    return this.form.get('maxDescription') as FormControl;
   }
 
   public get Image(): FormControl {
@@ -74,13 +85,13 @@ export class AddNewsComponent implements OnInit {
   onAdd() {
     if (this.form.valid) {
       let model = this.form.value;
-      console.log(typeof model.maxDescription);
-
+      debugger;
       this.newsService.getImageInBase64(model.image).then((data) => {
         model.image = data.split(',')[1];
         model.imageName = this.Image.value.name;
-
-        this.newsService.addNews(model);
+        this.newsService.addNews(model).subscribe((resData) => {
+          this.router.navigate(['/news']);
+        });
       });
     }
   }

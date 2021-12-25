@@ -88,7 +88,7 @@
       <td>{{ newData.nameEn }}</td>
       <td>{{ newData.detailsAr }}</td>
       <td>{{ newData.detailsEn }}</td>
-      <td>{{ newData.image }}</td>
+      <td> <img [src]="newData.image|safeUrl" class="img-fluid img-thumbnail rounded-3" /></td>
     
       <td>
         <button

@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "OA_WebApi/1.0.0": {
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.8",
           "Microsoft.EntityFrameworkCore": "5.0.8",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.8",
@@ -1469,6 +1470,7 @@
       },
       "OA_Service/1.0.0": {
         "dependencies": {
+          "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",

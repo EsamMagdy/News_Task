@@ -5,4 +5,5 @@ export interface News {
   detailsAr: string;
   detailsEn: string;
   image: string;
+  imageName: string;
 }

@@ -49,12 +49,12 @@ namespace OA_Service.Implementation
                                             image.Split('.')[1]);
         }
 
-        public string SaveImageToPath(string image, string imagePath, string imageName)
+        public string SaveImageToPath(string image, string imageName)
         {
             // var path = Path.Combine(_config["UploadPath"], imagePath);
-            var path = @"G:\PleskVhosts\ohsjoeq.com\Admin\Images\" + imagePath;
+            var path = @"G:\PleskVhosts\ohsjoeq.com\Admin\Images\";
             string webRootPath = _hostingEnvironment.WebRootPath;
-            string contentRootPath = _hostingEnvironment.ContentRootPath;
+            string contentRootPath = _hostingEnvironment.ContentRootPath + @"\Images";
             // var path = @"http:\\ohsjoeq.com\\Images\\" + imagePath;
             // var path = HttpContext.Current.Server.MapPath();
             // if (!Directory.Exists(path)) Directory.CreateDirectory(path);
@@ -68,7 +68,7 @@ namespace OA_Service.Implementation
 
             var imgName = SetImageName(imageName);
 
-            var imgPath = Path.Combine(path, imgName);
+            var imgPath = Path.Combine(contentRootPath, imgName);
             ConvertImageToBase64StringAndSaveToPath(image, imgPath);
             return imgName;
         }

@@ -12,14 +12,14 @@
               <input
                 type="text"
                 class="form-control"
-                name="title"
+                name="nameAr"
                 id="title"
                 placeholder="العنوان بالعربى..."
-                formControlName="title"
+                formControlName="nameAr"
               />
   
               <div
-                *ngIf="Title.hasError('required') && addForm.submitted"
+                *ngIf="NameAr.hasError('required') && addForm.submitted"
                 class="error-msg p-1 small"
                 role="alert"
               >
@@ -28,7 +28,7 @@
               </div>
   
               <div
-                *ngIf="Title.errors?.minlength && addForm.submitted"
+                *ngIf="NameAr.errors?.minlength && addForm.submitted"
                 class="error-msg p-1 small"
                 role="alert"
               >
@@ -37,7 +37,7 @@
               </div>
   
               <div
-                *ngIf="Title.errors?.maxlength && addForm.submitted"
+                *ngIf="NameAr.errors?.maxlength && addForm.submitted"
                 class="error-msg p-1 small"
                 role="alert"
               >
@@ -52,14 +52,14 @@
               <input
                 type="text"
                 class="form-control"
-                name="title"
+                name="nameEn"
                 id="title"
                 placeholder="العنوان بالانجليزى..."
-                formControlName="title"
+                formControlName="nameEn"
               />
   
               <div
-                *ngIf="Title.hasError('required') && addForm.submitted"
+                *ngIf="NameEn.hasError('required') && addForm.submitted"
                 class="error-msg p-1 small"
                 role="alert"
               >
@@ -68,7 +68,7 @@
               </div>
   
               <div
-                *ngIf="Title.errors?.minlength && addForm.submitted"
+                *ngIf="NameEn.errors?.minlength && addForm.submitted"
                 class="error-msg p-1 small"
                 role="alert"
               >
@@ -77,7 +77,7 @@
               </div>
   
               <div
-                *ngIf="Title.errors?.maxlength && addForm.submitted"
+                *ngIf="NameEn.errors?.maxlength && addForm.submitted"
                 class="error-msg p-1 small"
                 role="alert"
               >
@@ -111,11 +111,11 @@
                 name="minDesc"
                 id="minDesc"
                 rows="3"
-                formControlName="minDescription"
+                formControlName="detailsAr"
               ></textarea>
   
               <div
-                *ngIf="MinDescription.hasError('required') && addForm.submitted"
+                *ngIf="DetailsAr.hasError('required') && addForm.submitted"
                 class="error-msg p-1 small"
                 role="alert"
               >
@@ -124,7 +124,7 @@
               </div>
   
               <div
-                *ngIf="MinDescription.errors?.minlength && addForm.submitted"
+                *ngIf="DetailsAr.errors?.minlength && addForm.submitted"
                 class="error-msg p-1 small"
                 role="alert"
               >
@@ -133,7 +133,7 @@
               </div>
   
               <div
-                *ngIf="MinDescription.errors?.maxlength && addForm.submitted"
+                *ngIf="DetailsAr.errors?.maxlength && addForm.submitted"
                 class="error-msg p-1 small"
                 role="alert"
               >
@@ -150,11 +150,11 @@
                 name="minDesc"
                 id="minDesc"
                 rows="3"
-                formControlName="minDescription"
+                formControlName="detailsEn"
               ></textarea>
   
               <div
-                *ngIf="MinDescription.hasError('required') && addForm.submitted"
+                *ngIf="DetailsEn.hasError('required') && addForm.submitted"
                 class="error-msg p-1 small"
                 role="alert"
               >
@@ -163,7 +163,7 @@
               </div>
   
               <div
-                *ngIf="MinDescription.errors?.minlength && addForm.submitted"
+                *ngIf="DetailsEn.errors?.minlength && addForm.submitted"
                 class="error-msg p-1 small"
                 role="alert"
               >
@@ -172,7 +172,7 @@
               </div>
   
               <div
-                *ngIf="MinDescription.errors?.maxlength && addForm.submitted"
+                *ngIf="DetailsEn.errors?.maxlength && addForm.submitted"
                 class="error-msg p-1 small"
                 role="alert"
               >

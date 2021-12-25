@@ -5,7 +5,7 @@ let lang = localStorage.getItem('lang') ?? 'ar';
 export const environment = {
   production: false,
 
-  apiUrl: `https://localhost:5001/api/`, //test
+  apiUrl: `https://localhost:44371/api/`, //test
   // apiUrl: `https://dev.excp.sa:8018/${lang}/api/`, // developement
   // apiUrl: `https://www.eitinaa.com:8006/${lang}/api/`, // live
   // apiUrlForRenewContract: `https://dev.excp.sa:8027/${lang}/api/`,

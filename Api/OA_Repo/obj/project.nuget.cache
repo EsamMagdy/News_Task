@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LzCqO43s9JQ6AbkAmQ/kpl7xpHUPWbnG7FOb4vJBt5qrlNZN6l+AXUFd9Yg3CEwb4tROEbLRAjaBcjpeco3lbA==",
+  "dgSpecHash": "qzo/A7iJWyQWyBEjygYR5xy3S2UGPyQAoi7NqvcWrcD9MGVTzWwS61/3jWrT7ZsfzcNTUe7o+VVBxesn7XE6VQ==",
   "success": true,
-  "projectFilePath": "F:\\NewsTask\\api\\OA_Repo\\OA_Repo.csproj",
+  "projectFilePath": "F:\\NewsTask\\Api\\OA_Repo\\OA_Repo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\laptop\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\laptop\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.8\\microsoft.aspnetcore.cryptography.internal.5.0.8.nupkg.sha512",

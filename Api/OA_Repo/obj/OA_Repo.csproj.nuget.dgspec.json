@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\NewsTask\\api\\OA_Repo\\OA_Repo.csproj": {}
+    "F:\\NewsTask\\Api\\OA_Repo\\OA_Repo.csproj": {}
   },
   "projects": {
-    "F:\\NewsTask\\api\\OA_Data\\OA_Data.csproj": {
+    "F:\\NewsTask\\Api\\OA_Data\\OA_Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\NewsTask\\api\\OA_Data\\OA_Data.csproj",
+        "projectUniqueName": "F:\\NewsTask\\Api\\OA_Data\\OA_Data.csproj",
         "projectName": "OA_Data",
-        "projectPath": "F:\\NewsTask\\api\\OA_Data\\OA_Data.csproj",
+        "projectPath": "F:\\NewsTask\\Api\\OA_Data\\OA_Data.csproj",
         "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-        "outputPath": "F:\\NewsTask\\api\\OA_Data\\obj\\",
+        "outputPath": "F:\\NewsTask\\Api\\OA_Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -74,14 +74,14 @@
         }
       }
     },
-    "F:\\NewsTask\\api\\OA_Repo\\OA_Repo.csproj": {
+    "F:\\NewsTask\\Api\\OA_Repo\\OA_Repo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\NewsTask\\api\\OA_Repo\\OA_Repo.csproj",
+        "projectUniqueName": "F:\\NewsTask\\Api\\OA_Repo\\OA_Repo.csproj",
         "projectName": "OA_Repo",
-        "projectPath": "F:\\NewsTask\\api\\OA_Repo\\OA_Repo.csproj",
+        "projectPath": "F:\\NewsTask\\Api\\OA_Repo\\OA_Repo.csproj",
         "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-        "outputPath": "F:\\NewsTask\\api\\OA_Repo\\obj\\",
+        "outputPath": "F:\\NewsTask\\Api\\OA_Repo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -98,8 +98,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "F:\\NewsTask\\api\\OA_Data\\OA_Data.csproj": {
-                "projectPath": "F:\\NewsTask\\api\\OA_Data\\OA_Data.csproj"
+              "F:\\NewsTask\\Api\\OA_Data\\OA_Data.csproj": {
+                "projectPath": "F:\\NewsTask\\Api\\OA_Data\\OA_Data.csproj"
               }
             }
           }

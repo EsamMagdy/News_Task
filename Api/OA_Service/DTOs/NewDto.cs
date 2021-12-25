@@ -14,5 +14,6 @@ namespace OA_Service.DTOs
         public string DetailsAr { get; set; }
         public string DetailsEn { get; set; }
         public string Image { get; set; }
+        public string ImageName { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace OA_Service.Interface
     {
         Task<ResponseModel<PagingSortingFiltering<New>>> GetAllNews(PagingParams pagingParams, SortingParams sortingParams, string searchBy);
         New GetNewById(int Id);
-        void AddNew(New newData);
+        void AddNew(NewDto newDto);
         void UpdateNew(int id, NewDto newDto);
         void DeleteNew(int id);
     }

@@ -23,7 +23,6 @@ namespace OA_Service
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddTransient<INewService, NewService>();
-
             services.AddSingleton<IImageConversion, ImageConversion>();
             return services;
             

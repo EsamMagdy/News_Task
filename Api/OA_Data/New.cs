@@ -10,5 +10,7 @@ namespace OA_Data
         public string DetailsAr { get; set; }
         public string DetailsEn { get; set; }
         public string Image { get; set; }
+        public bool IsVisible { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

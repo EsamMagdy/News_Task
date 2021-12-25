@@ -18,11 +18,11 @@ import { LocalStorageKeys } from 'src/app/modules/shared/models/localStorageKeys
 import { User } from 'src/app/modules/shared/models/user.model';
 import { ServiceType } from 'src/app/modules/shared/_enums/serviceType';
 import { NewsService } from './news.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
-  templateUrl: 
-  './news.component.html',
+  templateUrl: './news.component.html',
   styleUrls: ['./news.component.scss'],
 })
 export class NewsComponent implements OnInit {
@@ -50,8 +50,9 @@ export class NewsComponent implements OnInit {
     private localStorageService: LocalStorageService,
     private alertErrorService: AlertErrorService,
     private authService: AuthService,
-    private newsService:NewsService,
-    private router:Router
+    private newsService: NewsService,
+    private router: Router,
+    private _sanitizer: DomSanitizer
   ) {}
 
   ngOnInit() {
@@ -61,7 +62,6 @@ export class NewsComponent implements OnInit {
         this.user = user;
       }
     });
-  
   }
   onItemSelect(item: any) {
     console.log(item);
@@ -72,9 +72,7 @@ export class NewsComponent implements OnInit {
   editUser(user: User) {
     this.productDialog = true;
   }
-  deleteUser(user: any) {
-
-  }
+  deleteUser(user: any) {}
   hideDialog() {
     this.productDialog = false;
     this.submitted = false;
@@ -195,5 +193,10 @@ export class NewsComponent implements OnInit {
         this.totalCount = response.data.totalItems;
         console.log(response);
       });
+  }
+  getBackground(image:any) {
+    return this._sanitizer.bypassSecurityTrustStyle(
+      `linear-gradient(rgba(29, 29, 29, 0), rgba(16, 16, 23, 0.5)), url(${image})`
+    );
   }
 }

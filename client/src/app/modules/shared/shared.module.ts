@@ -1,3 +1,4 @@
+import { SafeUrlPipe } from './pipes/safeUrl.pipe';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { CommonModule } from "@angular/common";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
@@ -12,6 +13,7 @@ import { MyLoaderComponent } from "./components/my-loader/my-loader.component";
     // CheckIDNumberDirective,
     MyLoaderComponent,
     AlertErrorComponent,
+    SafeUrlPipe
   ],
   imports: [
     CommonModule,
@@ -23,6 +25,7 @@ import { MyLoaderComponent } from "./components/my-loader/my-loader.component";
     MyLoaderComponent,
     // CheckIDNumberDirective,
     AlertErrorComponent,
+    SafeUrlPipe
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true },

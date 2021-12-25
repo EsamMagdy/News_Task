@@ -1667,6 +1667,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "AutoMapper": "10.1.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "8.1.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.8",
@@ -6033,6 +6034,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 5.0.8",
       "Microsoft.EntityFrameworkCore >= 5.0.8",
       "Microsoft.EntityFrameworkCore.Relational >= 5.0.8",
@@ -6048,11 +6050,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\NewsTask\\api\\oa_webapi\\OA_WebApi.csproj",
+      "projectUniqueName": "F:\\NewsTask\\Api\\OA_WebApi\\OA_WebApi.csproj",
       "projectName": "OA_WebApi",
-      "projectPath": "F:\\NewsTask\\api\\oa_webapi\\OA_WebApi.csproj",
+      "projectPath": "F:\\NewsTask\\Api\\OA_WebApi\\OA_WebApi.csproj",
       "packagesPath": "C:\\Users\\laptop\\.nuget\\packages\\",
-      "outputPath": "F:\\NewsTask\\api\\oa_webapi\\obj\\",
+      "outputPath": "F:\\NewsTask\\Api\\OA_WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\laptop\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6069,8 +6071,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "F:\\NewsTask\\api\\OA_Service\\OA_Service.csproj": {
-              "projectPath": "F:\\NewsTask\\api\\OA_Service\\OA_Service.csproj"
+            "F:\\NewsTask\\Api\\OA_Service\\OA_Service.csproj": {
+              "projectPath": "F:\\NewsTask\\Api\\OA_Service\\OA_Service.csproj"
             }
           }
         }
@@ -6085,6 +6087,10 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[8.1.1, )"
+          },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[5.0.8, )"
