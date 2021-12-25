@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.309" height="35.716" viewBox="0 0 38.309 35.716">
+  <g id="half-moon" transform="matrix(0.966, 0.259, -0.259, 0.966, 8.22, -0.729)">
+    <path id="Path_2417" data-name="Path 2417" d="M26.944,17.977A11.183,11.183,0,1,1,14.165,0a14.555,14.555,0,1,0,14.94,14.94A11.16,11.16,0,0,1,26.944,17.977Z" transform="translate(1.723 0.293)" fill="#fcd57e"/>
+    <g id="Group_604" data-name="Group 604" transform="translate(0)">
+      <path id="Path_2418" data-name="Path 2418" d="M4.664,5.7l.516,4.664L5.7,5.7l4.664-.516L5.7,4.664,5.18,0,4.664,4.664,0,5.18Z" transform="translate(20.791 0)"/>
+      <path id="Path_2419" data-name="Path 2419" d="M3.341,4.08,3.71,7.421,4.08,4.08,7.421,3.71,4.08,3.341,3.71,0,3.341,3.341,0,3.71Z" transform="translate(0.131 24.829)"/>
+      <rect id="Rectangle_225" data-name="Rectangle 225" width="0.936" height="0.936" transform="translate(15.091 14.71) rotate(-45)"/>
+      <rect id="Rectangle_226" data-name="Rectangle 226" width="0.936" height="0.936" transform="translate(30.961 9.758) rotate(-45)"/>
+      <rect id="Rectangle_227" data-name="Rectangle 227" width="0.936" height="0.936" transform="translate(33.769 17.98) rotate(-45)"/>
+      <rect id="Rectangle_228" data-name="Rectangle 228" width="0.936" height="0.936" transform="translate(0 3.541) rotate(-45)"/>
+      <rect id="Rectangle_229" data-name="Rectangle 229" width="0.936" height="0.936" transform="translate(24.405 30.352) rotate(-45)"/>
+      <rect id="Rectangle_230" data-name="Rectangle 230" width="0.936" height="0.936" transform="translate(3.749 1.135) rotate(-45)"/>
+    </g>
+  </g>
+</svg>

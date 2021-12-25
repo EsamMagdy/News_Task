@@ -1,0 +1,22 @@
+.layout {
+  height: 100vh;
+}
+
+.custom-m {
+  margin-top: 56px;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-m {
+    margin-top: 61px;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  align-self: flex-start;
+  z-index: 50;
+  right: 0;
+  left: 0;
+}

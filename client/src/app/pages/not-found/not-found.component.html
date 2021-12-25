@@ -1,0 +1,14 @@
+<div class="h-100 d-flex flex-column justify-content-center align-items-center">
+  <div class="display-6">
+    {{ errorMessage != null ? errorMessage : ("pageNotFount" | translate) }}
+  </div>
+  <img
+    src="assets/images/bgs/404.gif"
+    class="img-fluid col-lg-4 col-md-6"
+    alt=""
+  />
+
+  <a type="button" class="btn main-btn mb-5" [routerLink]="['/home']">{{
+    "back home" | translate
+  }}</a>
+</div>

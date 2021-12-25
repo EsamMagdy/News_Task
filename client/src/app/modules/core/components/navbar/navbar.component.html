@@ -1,0 +1,172 @@
+<nav class="shadow navbar navbar-expand-lg navbar-dark bg-7f8084">
+  <div class="container">
+    <a class="gap-3 navbar-brand d-flex d-lg-none">
+      <img src="assets/images/logo-white.png" height="35" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="gap-3 mb-2 navbar-nav me-auto mb-lg-0 align-items-center">
+        <li class="nav-item">
+          <a
+            [routerLink]="['/news']"
+            routerLinkActive="active"
+            class="nav-link active"
+            aria-current="page"
+          >
+            {{ "Navbar.home" | translate }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/about']"
+            routerLinkActive="active"
+          >
+            {{ "Navbar.aboutEitinaa" | translate }}
+          </a>
+        </li>
+
+        <!-- <li class="nav-item">
+          <a
+            (click)="onLangChange()"
+            class="nav-link"
+            tabindex="-1"
+            aria-disabled="true"
+          >
+            {{ "Navbar.lang" | translate }}
+          </a>
+        </li> -->
+      </ul>
+      <form class="d-flex justify-content-center navbar-nav">
+        <a
+          [routerLink]="['/auth/login']"
+          id="login-btn"
+          class="gap-2 btn d-flex align-items-center"
+          *ngIf="!isAuthenticated"
+        >
+          <svg-icon
+            src="assets/images/icons/person.svg"
+            svgClass="login-icon"
+          ></svg-icon>
+          <span>{{ "Navbar.login" | translate }}</span>
+        </a>
+
+        <li
+          class="nav-item position-relative text-w-800"
+          *ngIf="isAuthenticated"
+        >
+          <a
+            class="px-0 nav-link underLine dropdown-toggle hide-arrow"
+            routerLinkActive="active"
+            tabindex="-1"
+            aria-disabled="true"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <svg-icon
+              src="assets/images/icons/person.svg"
+              svgClass="login-icon"
+            ></svg-icon>
+            {{ user?.name }}
+          </a>
+          <ul
+            class="dropdown-menu dropdown-at-navbar"
+            aria-labelledby="navbarDropdown"
+          >
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/dashboard/dash']"
+                routerLinkActive="active"
+                >{{ "Dash.SideMenu.Dashboard" | translate }}</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/dashboard/account']"
+                routerLinkActive="active"
+              >
+                {{ "Dash.SideMenu.Profile" | translate }}</a
+              >
+            </li>
+            <!-- <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/dashboard/contracts']"
+                routerLinkActive="active"
+                >{{ "Dash.SideMenu.MyContracts" | translate }}</a
+              >
+            </li> -->
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/dashboard/individual-contracts']"
+                routerLinkActive="active"
+              >
+                {{ "Dash.SideMenu.IndividualContract" | translate }}</a
+              >
+            </li>
+            <!-- <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/dashboard/visits']"
+                routerLinkActive="active"
+              >
+                {{ "Dash.SideMenu.Visits" | translate }}</a
+              >
+            </li> -->
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/dashboard/individual-requests']"
+                routerLinkActive="active"
+                >{{ "Dash.SideMenu.IndividualRequests" | translate }}</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/dashboard/lead']"
+                routerLinkActive="active"
+                >{{ "Dash.SideMenu.MyRequests" | translate }}</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                [routerLink]="['/dashboard/support']"
+                routerLinkActive="active"
+              >
+                {{ "Dash.SideMenu.TechnicalSupport" | translate }}</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                (click)="onLogout()"
+                routerLinkActive="active"
+                style="cursor: pointer"
+              >
+                {{ "Dash.SideMenu.LogOut" | translate }}</a
+              >
+            </li>
+          </ul>
+        </li>
+      </form>
+    </div>
+  </div>
+</nav>
+<!-- Modal -->

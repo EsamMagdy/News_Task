@@ -1,0 +1,67 @@
+<div id="otp" class="h-100">
+  <div class="px-2 row g-0 px-md-0 h-100">
+    <div class="py-5 col-lg-7 d-flex align-items-center justify-content-center">
+      <form
+        class="gap-4 p-2 d-flex flex-column align-items-center w-100"
+        (ngSubmit)="submit()"
+        #verificationForm="ngForm"
+      >
+        <div class="custom-header">
+          {{ "auth.checkPhoneNumber" | translate }}
+        </div>
+        <div class="mt-3 fs-18">
+          {{ "auth.WelcomeDearCustomer" | translate }}
+        </div>
+        <!-------------------------------- Error Message ------------------------------>
+        <div class="form-group col-12 col-md-6" *ngIf="error">
+          <div
+            class="p-1 px-1 error-msg d-block fs-12 rounded-0 col-9"
+            role="alert"
+          >
+            <i class="fas fa-times-circle me-2"></i>{{ error }}
+          </div>
+        </div>
+        <div class="form-group col-12 col-md-6">
+          <label for="Code">{{ "auth.verificationCode" | translate }} </label>
+          <input
+            type="text"
+            class="form-control"
+            name="Code"
+            id="Code"
+            ngModel
+            required
+            #code="ngModel"
+            autocomplete="off"
+          />
+          <div
+            *ngIf="
+              code.hasError('required') &&
+              (verificationForm.submitted || code.touched)
+            "
+            class="p-1 px-1 error-msg d-block fs-12 rounded-0 col-9"
+            role="alert"
+          >
+            <i class="fas fa-times-circle me-2"></i
+            >{{ "Validation.required" | translate }}
+          </div>
+        </div>
+
+        <div class="mt-3 d-flex gap-3 justify-content-center col-12 col-md-6">
+          <button type="submit" class="btn primary-btn w-100">
+            {{ "auth.check" | translate }}
+          </button>
+          <button
+            type="button"
+            class="btn primary-btn w-100"
+            (click)="resendCode()"
+          >
+            {{ "Auth.ResendCodeHeader" | translate }}
+          </button>
+        </div>
+
+        <!-- <div *ngIf="!resendCodeButton" class="text-center text-1298ad">00:{{ counter }}</div> -->
+      </form>
+    </div>
+    <div id="banner" class="overflow-hidden col-lg-5 d-none d-lg-block"></div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div
+  class="
+    custom-container
+    h-100
+    d-flex
+    justify-content-center
+    align-items-center
+  "
+>
+  <div class="my-4 d-flex flex-column justify-content-center align-items-center">
+    <img
+      src="assets/images/error-message.png"
+      class="w-25 m-4"
+      alt="404 page not found"
+    />
+    <div class="display-6 mb-4">{{ errorMessage }}</div>
+    
+    <a
+      type="button"
+      routerLinkActive="active"
+      class="btn primary-btn w-30"
+      (click)="goBack()"
+    >
+    {{ "GoBack" | translate }}
+    </a>
+  </div>
+</div>

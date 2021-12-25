@@ -1,0 +1,133 @@
+.adaptive-height {
+  height: calc(100vh - 144px);
+}
+
+@media screen and (max-width: 768px) {
+  .adaptive-height {
+    height: calc(50vh - 82px) !important;
+    overflow: auto;
+  }
+}
+
+.slide {
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.carousel-control-prev-icon {
+  background-image: url(../../../assets/images/home/left.png);
+}
+
+.carousel-control-next-icon {
+  background-image: url(../../../assets/images/home/right.png);
+}
+@media (min-width: 768px) {
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 7%;
+  }
+}
+
+#offers {
+  background: url(../../../assets/images/home/bg2.jpg);
+  background-size: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.row-gap-46 {
+  row-gap: 4rem;
+}
+
+.form {
+  background-image: url(../../../assets/images/home/bg3.jpg);
+  background-color: #1298ad;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+}
+.form .error-msg {
+  color: #fff !important;
+}
+.form-control {
+  background-color: rgba(255, 255, 255, 0.45);
+  border: none !important;
+  box-shadow: none;
+  color: white !important;
+}
+
+.form-control::placeholder {
+  color: white;
+}
+
+#eitnaa-app {
+  background: url(../../../assets/images/home/bg4.jpg);
+  background-size: cover;
+  background-position: bottom;
+  padding-top: 4.5em;
+
+  ul {
+    list-style: none;
+    padding-inline-start: 0;
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+    margin-top: 1.8rem;
+  }
+
+  li {
+    position: relative;
+    padding-inline-start: 45px;
+  }
+
+  li:before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 0;
+    background: url(../../../assets/images/icons/eitnaa.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+::ng-deep {
+  html:lang(ar) li::before {
+    right: 0;
+    left: auto;
+  }
+}
+::ng-deep {
+  .p-paginator-bottom {
+    direction: ltr !important;
+  }
+  .p-dialog {
+    width: 600px !important;
+  }
+}
+
+.form {
+  position: relative;
+}
+
+.row {
+  row-gap: 2rem;
+}
+
+@media (max-width: 767px) {
+  #offers {
+    background-size: 300%;
+  }
+}
+.tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0505059f;
+  z-index: 3;
+}

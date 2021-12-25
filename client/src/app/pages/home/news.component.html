@@ -1,0 +1,169 @@
+<p-toolbar styleClass="p-mb-4">
+  <ng-template pTemplate="left">
+    <button
+      pButton
+      pRipple
+      label="اضافة"
+      icon="pi pi-plus"
+      class="p-button-success p-mr-2"
+      (click)="openNew()"
+    ></button>
+    <button
+      pButton
+      pRipple
+      [label]="'حذف'"
+      icon="pi pi-trash"
+      class="p-button-danger m-1"
+      (click)="deleteSelectedUsers()"
+      [disabled]="!selectedUsers || !selectedUsers.length"
+    ></button>
+  </ng-template>
+
+  <!-- <ng-template pTemplate="right">
+        <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="p-mr-2 p-d-inline-block"></p-fileUpload>
+        <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
+    </ng-template> -->
+</p-toolbar>
+
+<p-table
+  #dt
+  [lazy]="true"
+  (onLazyLoad)="loadUsers($event)"
+  [value]="news"
+  [rows]="pageSize"
+  [paginator]="true"
+  [totalRecords]="totalCount"
+  [globalFilterFields]="['fullName', 'email']"
+  [(selection)]="selectedUsers"
+  [rowHover]="true"
+  dataKey="id"
+  currentPageReportTemplate="عرض {first} الى {last} من {totalRecords} العناصر"
+  [showCurrentPageReport]="true"
+  sortMode="multiple"
+>
+  <ng-template pTemplate="caption">
+    <div class="p-d-flex p-ai-center p-jc-between">
+      <h5 class="p-m-0">ادارة الاخبار</h5>
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input
+          pInputText
+          type="text"
+          (input)="filterGlobal($event, 'contains')"
+          placeholder="بحث..."
+        />
+        <!-- <input pInputText type="text"  placeholder="Search..." /> -->
+      </span>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th style="width: 3rem">
+        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+      </th>
+      <th pSortableColumn="nameAr">
+        الاسم بالعربى <p-sortIcon field="nameAr"></p-sortIcon>
+      </th>
+      <th pSortableColumn="nameEn">
+        الاسم بالانجليزى <p-sortIcon field="nameEn"></p-sortIcon>
+      </th>
+      <th pSortableColumn="detailsAr">
+        التفاصيل بالعربى <p-sortIcon field="detailsAr"></p-sortIcon>
+      </th>
+      <th pSortableColumn="detailsEn">
+        التفاصيل بالانجليزى <p-sortIcon field="detailsEn"></p-sortIcon>
+      </th>
+      <th pSortableColumn="image">
+        الصورة <p-sortIcon field="image"></p-sortIcon>
+      </th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-newData>
+    <tr>
+      <td>
+        <p-tableCheckbox [value]="newData"></p-tableCheckbox>
+      </td>
+      <td>{{ newData.nameAr }}</td>
+      <td>{{ newData.nameEn }}</td>
+      <td>{{ newData.detailsAr }}</td>
+      <td>{{ newData.detailsEn }}</td>
+      <td>{{ newData.image }}</td>
+    
+      <td>
+        <button
+          pButton
+          pRipple
+          icon="pi pi-pencil"
+          class="p-button-rounded p-button-success p-mr-2"
+          (click)="editUser(user)"
+        ></button>
+        <button
+          pButton
+          pRipple
+          icon="pi pi-trash"
+          class="p-button-rounded p-button-danger"
+          (click)="deleteUser(user)"
+        ></button>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+    <div class="p-d-flex p-ai-center p-jc-between">
+      يوجد عدد {{ totalCount }} اخبار.
+    </div>
+  </ng-template>
+</p-table>
+
+<p-dialog
+  [(visible)]="productDialog"
+  [style]="{ width: '450px' }"
+  header="اضافة خبر"
+  [modal]="true"
+  styleClass="p-fluid"
+>
+  <ng-template pTemplate="content">
+    <div class="p-field">
+      <label for="name"> الاسم بالعربى</label>
+      <input type="text" pInputText id="name" required autofocus />
+      <small class="p-error">الاسم بالعربى مطلوب</small>
+    </div>
+    <div class="p-field">
+      <label for="name"> الاسم بالانجليزى</label>
+      <input type="text" pInputText id="name" required autofocus />
+      <small class="p-error">الاسم بالانجليزى مطلوب</small>
+    </div>
+    <div class="p-field">
+      <label for="name"> التفاصيل بالعربى</label>
+      <input type="text" pInputText id="name" required autofocus />
+      <small class="p-error">التفاصيل بالعربى مطلوب</small>
+    </div>
+    <div class="p-field">
+      <label for="name"> التفاصيل بالانجليزى</label>
+      <input type="text" pInputText id="name" required autofocus />
+      <small class="p-error">التفاصيل بالانجليزى مطلوب</small>
+    </div>
+    <div class="p-field">
+      <label for="name"> الصورة</label>
+      <input type="text" pInputText id="name" required autofocus />
+      <small class="p-error">الصورة مطلوبة</small>
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <button
+      pButton
+      pRipple
+      label="حفظ"
+      class="p-button-primary"
+      (click)="saveUser()"
+    ></button>
+    <button
+      pButton
+      pRipple
+      label="الغاء"
+      class="p-button-danger"
+      (click)="hideDialog()"
+    ></button>
+  </ng-template>
+</p-dialog>
